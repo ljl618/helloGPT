@@ -48,7 +48,7 @@ export const chatWithGptTurboByProxy = async (
     controller: AbortController
 ) => {
     try {
-        const res = await fetch(`/api/chat_with_gpt_by_proxy`, {
+        const res = await fetch(`/api/generate`, {
             method: 'POST',
             body: JSON.stringify({
                 apiKey,
