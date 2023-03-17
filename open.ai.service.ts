@@ -66,7 +66,8 @@ export const chatWithGptTurboByProxy = async (
             }
             return response;
         });
-        return new Response(parseOpenAIStream(res));
+        return res;
+        // return new Response(parseOpenAIStream(res));
     } catch (error) {
         throw error;
     }
