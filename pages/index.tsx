@@ -41,19 +41,19 @@ const chatDB = new ChatService();
 
 const SystemMenus = [
     {
-        label: 'Robot Avatar Settings',
+        label: 'AI头像设置',
         value: SystemSettingMenu.robotAvatarSettings,
     },
     {
-        label: 'User Avatar Settings',
+        label: '用户头像设置',
         value: SystemSettingMenu.userAvatarSettings,
     },
     {
-        label: 'System Role Settings',
+        label: '系统角色设置',
         value: SystemSettingMenu.systemRoleSettings,
     },
     {
-        label: 'API KEY Settings',
+        label: 'API KEY 设置',
         value: SystemSettingMenu.apiKeySettings,
     },
 ];
@@ -553,7 +553,7 @@ export default function Home() {
             <div className={styles.header}>
                 <div className={styles.title} onClick={async () => {}}>
                     <span className={styles.item}>Hello</span>
-                    <span className={styles.item}>GPT</span>
+                    <span className={styles.item}>GPT 镜像站</span>
                 </div>
                 <div className={styles.description}>
                     基于 OpenAI API(gpt-3.5-turbo)
@@ -683,8 +683,8 @@ export default function Home() {
                             }}
                             placeholder={
                                 loading
-                                    ? 'hello-gpt is thinking...'
-                                    : 'ask hello-gpt for anything...'
+                                    ? 'GPT 正在思考..'
+                                    : '向 GPT 问任何事...'
                             }
                             rows={1}
                             onKeyDown={(event) => {
@@ -755,7 +755,7 @@ export default function Home() {
                                 }
                             }}
                         >
-                            Stop
+                            停止
                         </div>
                     ) : (
                         <div
@@ -764,7 +764,7 @@ export default function Home() {
                                 chatGPTTurboWithLatestUserPrompt(true)
                             }
                         >
-                            Regenerate
+                            重新生成
                         </div>
                     )}
                 </div>
@@ -808,7 +808,7 @@ export default function Home() {
                     {activeSystemMenu ===
                         SystemSettingMenu.robotAvatarSettings && (
                         <AvatarUploader
-                            title="Robot Avatar Settings"
+                            title="AI头像设置"
                             img={robotAvatar}
                             updateAvatar={updateRobotAvatar}
                         />
@@ -816,7 +816,7 @@ export default function Home() {
                     {activeSystemMenu ===
                         SystemSettingMenu.userAvatarSettings && (
                         <AvatarUploader
-                            title="User Avatar Settings"
+                            title="用户头像设置"
                             img={userAvatar}
                             updateAvatar={updateUserAvatar}
                         />
@@ -824,9 +824,9 @@ export default function Home() {
                     {activeSystemMenu ===
                         SystemSettingMenu.systemRoleSettings && (
                         <div className={styles.systemRoleSettings}>
-                            <label htmlFor="systemRole">System Role</label>
+                            <label htmlFor="systemRole">系统角色设定</label>
                             <textarea
-                                placeholder="Enter system role here"
+                                placeholder="在此输入系统角色设定"
                                 id="systemRole"
                                 value={tempSystemRoleValue}
                                 rows={4}
@@ -879,7 +879,7 @@ export default function Home() {
                         <div className={styles.systemRoleSettings}>
                             <label htmlFor="apiKey">Open AI API Key</label>
                             <input
-                                placeholder="Enter your open ai api key"
+                                placeholder="请输入您的openAI的API密钥"
                                 id="apiKey"
                                 value={tempApiKeyValue}
                                 onChange={(e) => {
@@ -897,17 +897,26 @@ export default function Home() {
                             </div>
 
                             <div className={styles.benefits}>
-                            不知道如何获取API密钥？如果您拥有Open AI账户，请访问{' '}
+                            不知道如何获得你的 API KEY？<br /><br />
+
+                            1. 如果你有一个 Open AI账户，请访问 请访问{' '}
                                 <Link
                                     href="https://platform.openai.com/account/api-keys"
                                     target="_blank"
                                 >
                                     Open AI平台API密钥页面
-                                </Link>{' '}
-                                查看您的API密钥列表。如果您没有ChatGPT账户，
-                                请点击下面的按钮获取临时API密钥，
-                                这可能会导致访问速度较慢。因此，
-                                为了确保更快的对话，请尽可能使用您自己的API密钥。
+                                </Link>{' '}来查看你的API key。<br /><br />
+
+                            2. 如果你没有 ChatGPT 账户, 请访问 {' '}
+                                <Link
+                                    href="http://42.193.117.207/"
+                                    target="_blank"
+                                >
+                                    购买链接
+                                </Link>{' '} 获取 ChatGPT 账户和 API KEY。<br /><br />
+
+
+                                很抱歉：因为站长的账号额度耗尽，目前无 Key 用户无法使用镜像站。
                             </div>
                             <div className={styles.btnContainer}>
                                 <button
