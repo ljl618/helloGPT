@@ -290,7 +290,7 @@ export default function Home() {
             controller.current = new AbortController();
 
             // user api key
-            const response = await chatWithGptTurbo(
+            const response = await chatWithGptTurboByProxy(
                 apiKey,
                 latestMessageLimit3,
                 controller.current
