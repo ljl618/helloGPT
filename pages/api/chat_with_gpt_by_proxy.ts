@@ -12,11 +12,11 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    const apiKey = process.env.API_KEY;
+    
     // owner api key proxy open ai service
     if (req.method === 'POST') {
         const postData = JSON.parse(req.body) as PostData;
-
+        const apiKey = JSON.parse(req.body).apiKey || process.env.API_KEY;
         const options = {
             headers: {
                 'Content-Type': 'application/json',

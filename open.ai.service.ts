@@ -43,6 +43,7 @@ export const chatWithGptTurbo = async (
 };
 
 export const chatWithGptTurboByProxy = async (
+    apiKey: string,
     messages: IMessage[],
     controller: AbortController
 ) => {
@@ -50,6 +51,7 @@ export const chatWithGptTurboByProxy = async (
         const res = await fetch(`/api/chat_with_gpt_by_proxy`, {
             method: 'POST',
             body: JSON.stringify({
+                apiKey,
                 messages: messages.map((item) => ({
                     role: item.role,
                     content: item.content,
