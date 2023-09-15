@@ -909,7 +909,7 @@ export default function Home() {
 
                             2. 如果你没有 ChatGPT 账户, 请访问 {' '}
                                 <Link
-                                    href="http://42.193.117.207/"
+                                    href="http://faka.aifk.pw/"
                                     target="_blank"
                                 >
                                     购买链接
